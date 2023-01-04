@@ -52,33 +52,33 @@ The 'Exclusive-NOR' gate circuit does the opposite to the EX-OR gate. It will gi
 Y= A⊕B
 
 ## Procedure
- Connect the supply (+5V) to the circuit
- Switch ON the main switch
- Press the switches for inputs “A” and “B”. The switch is ON state when 1 is pressed. The switch is OFF state when 0 is pressed.
- If the output is 1, then the bulb glows.
- Check all the gates following the same procedure.
-##Program:
+    Connect the supply (+5V) to the circuit
+    Switch ON the main switch
+    Press the switches for inputs “A” and “B”. The switch is ON state when 1 is pressed. The switch is OFF state when 0 is pressed.
+    If the output is 1, then the bulb glows.
+    Check all the gates following the same procedure.
+ 
+ ## Program:
+    module exp1(sumH,carryH,sumF,carryF,a,b,carryIn);
+    input a,b,carryIn;
+    output sumH,carryH,sumF,carryF;
+    assign sumH= a^b;
+    assign carryH= a&b;
+    assign sumF= sumH^carryIn;
+    wire p;
+    assign p= sumH&carryIn;
+    assign carryF=carryH|p;
+    endmodule
+## 
+    Program to verify the truth table in quartus for the basic logic gates using Verilog programming.
+    Developed by: Preethi M
+    RegisterNumber:  22000091
+## Output Screenshots
+    Logic symbol & Truthtable
+    RTL realization
+    Output :
+    ![RTL](images/Exp1.png)
+    ![TruthTable](images/Exp1Sim.png)
 
- module exp1(sumH,carryH,sumF,carryF,a,b,carryIn);
- input a,b,carryIn;
- output sumH,carryH,sumF,carryF;
- assign sumH= a^b;
- assign carryH= a&b;
- assign sumF= sumH^carryIn;
- wire p;
- assign p= sumH&carryIn;
- assign carryF=carryH|p;
- endmodule
-/*
-Program to verify the truth table in quartus for the basic logic gates using Verilog programming.
-Developed by: Preethi M
-RegisterNumber:  22000091
-*/
- Logic symbol & Truthtable
- RTL realization
- Output :
- ![RTL](images/Exp1.png)
- ![TruthTable](images/Exp1Sim.png)
-
-##Result:
-Thus the different digital IC’s are studied and the truth table for different logic gates are verified.
+## Result:
+    Thus the different digital IC’s are studied and the truth table for different logic gates are verified.
